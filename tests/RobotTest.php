@@ -138,7 +138,7 @@ class RobotTest extends TestCase
     {
         $robot = new Robot(getenv('ROBOT_ACCESS_TOKEN'), getenv('ROBOT_SECRET'));
 
-        if (PHP_VERSION_ID < 70400 || PHP_VERSION_ID > 80000) {
+        if (getenv('MOCK')) {
             $content = $success ? '{"errcode":0,"errmsg":"ok"}' : '{"errcode":400602,"errmsg":"miss param : feedCard->links"}';
             $mock = new MockHandler([new Response(200, [], $content)]);
             $handlerStack = HandlerStack::create($mock);
@@ -162,7 +162,7 @@ class RobotTest extends TestCase
         self::assertSame('amkLsBkk5EosJmCHy4jULhWijmFkrFuDirC8ZpzHWpY=', Robot::sign(1614076018000, 'test'));
     }
 
-    public function testEmptyMessage()
+    public function testEmptyMessage(): void
     {
         $message = new EmptyMessage();
         self::assertSame('empty', $message->type());

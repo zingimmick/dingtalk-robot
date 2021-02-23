@@ -16,6 +16,11 @@ jobs:
       matrix:
         php: [7.2, 7.3, 7.4, 8.0]
         stability: [prefer-lowest, prefer-stable]
+        mock: [true]
+        include:
+          - php: 7.4
+            stability: prefer-stable
+            mock: false
 
     name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
 
@@ -51,6 +56,7 @@ jobs:
         env:
           ROBOT_ACCESS_TOKEN: ${{ secrets.ROBOT_ACCESS_TOKEN }}
           ROBOT_SECRET: ${{ secrets.ROBOT_SECRET }}
+          MOCK: ${{ matrix.mock }}
         run: composer run-script test:phpunit -- --coverage-clover coverage.xml
 
       - name: Upload coverage to Codecov
