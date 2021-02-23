@@ -18,6 +18,8 @@ jobs:
 
     name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
 
+    environment: test
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
