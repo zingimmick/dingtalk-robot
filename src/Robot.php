@@ -43,7 +43,7 @@ class Robot
     /**
      * @param \Zing\DingtalkRobot\Messages\Message|string $message
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException|\Zing\DingtalkRobot\Exceptions\CannotSendException
+     * @throws \GuzzleHttp\Exception\GuzzleException|\Zing\DingtalkRobot\Exceptions\CannotSendException|\Zing\DingtalkRobot\Exceptions\InvalidArgumentException
      *
      * @return mixed
      */
