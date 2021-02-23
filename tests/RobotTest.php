@@ -90,14 +90,14 @@ class RobotTest extends TestCase
      */
     public function testSend($message): void
     {
-        $robot =  $this->makeRobot();
+        $robot = $this->makeRobot();
         $robot->send($message);
         self::assertTrue(true);
     }
 
     public function testSendInvalidMessage(): void
     {
-        $robot =  $this->makeRobot();
+        $robot = $this->makeRobot();
         $this->expectException(InvalidArgumentException::class);
         $robot->send(1);
     }
