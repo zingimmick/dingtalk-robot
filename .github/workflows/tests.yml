@@ -47,6 +47,9 @@ jobs:
         run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
       - name: Execute tests
+        env:
+          ROBOT_ACCESS_TOKEN: ${{ secrets.ROBOT_ACCESS_TOKEN }}
+          ROBOT_SECRET: ${{ secrets.ROBOT_SECRET }}
         run: composer run-script test:phpunit -- --coverage-clover coverage.xml
 
       - name: Upload coverage to Codecov
