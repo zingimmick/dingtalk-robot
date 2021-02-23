@@ -138,7 +138,7 @@ class RobotTest extends TestCase
     {
         $robot = new Robot(getenv('ROBOT_ACCESS_TOKEN'), getenv('ROBOT_SECRET'));
 
-        if (PHP_VERSION_ID >= 70400 && PHP_VERSION_ID < 80000) {
+        if (PHP_VERSION_ID < 70400 || PHP_VERSION_ID > 80000) {
             $content = $success ? '{"errcode":0,"errmsg":"ok"}' : '{"errcode":400602,"errmsg":"miss param : feedCard->links"}';
             $mock = new MockHandler([new Response(200, [], $content)]);
             $handlerStack = HandlerStack::create($mock);
