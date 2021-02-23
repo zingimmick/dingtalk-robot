@@ -138,7 +138,7 @@ class RobotTest extends TestCase
     {
         $robot = new Robot(getenv('ROBOT_ACCESS_TOKEN'), getenv('ROBOT_SECRET'));
 
-        if (getenv('MOCK')) {
+        if (getenv('MOCK') === 'true') {
             $content = $success ? '{"errcode":0,"errmsg":"ok"}' : '{"errcode":400602,"errmsg":"miss param : feedCard->links"}';
             $mock = new MockHandler([new Response(200, [], $content)]);
             $handlerStack = HandlerStack::create($mock);
