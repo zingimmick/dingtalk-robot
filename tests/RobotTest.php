@@ -2,11 +2,8 @@
 
 namespace Zing\DingtalkRobot\Tests;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Message;
 use GuzzleHttp\Psr7\Response;
-use ReflectionObject;
 use Zing\DingtalkRobot\Exceptions\CannotSendException;
 use Zing\DingtalkRobot\Exceptions\InvalidArgumentException;
 use Zing\DingtalkRobot\Messages\ActionCardMessage;
@@ -22,6 +19,8 @@ use Zing\DingtalkRobot\Robot;
 
 class RobotTest extends TestCase
 {
+    use MockRobot;
+
     public function messages(): array
     {
         return [
@@ -110,16 +109,25 @@ class RobotTest extends TestCase
      * @param \Zing\DingtalkRobot\Messages\Message|string $messageGenerator
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Zing\DingtalkRobot\Exceptions\CannotSendException
+     * @throws \Zing\DingtalkRobot\Exceptions\CannotSendException|\Zing\DingtalkRobot\Exceptions\InvalidArgumentException
      */
     public function testSend($messageGenerator): void
     {
         $robot = $this->makeRobot();
         $message = is_callable($messageGenerator) ? $messageGenerator() : $messageGenerator;
         $robot->send($message);
-        self::assertTrue(true);
+        self::assertCount(1, $this->container);
+        $response = $this->container[0]['response'];
+        self::assertInstanceOf(Response::class, $response);
+        Message::rewindBody($response);
+        self::assertSame(ResponseContentList::SUCCESS, $response->getBody()->getContents());
     }
 
+    /**
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Zing\DingtalkRobot\Exceptions\CannotSendException
+     * @throws \Zing\DingtalkRobot\Exceptions\InvalidArgumentException
+     */
     public function testSendInvalidMessage(): void
     {
         $robot = $this->makeRobot();
@@ -127,34 +135,16 @@ class RobotTest extends TestCase
         $robot->send(1);
     }
 
+    /**
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Zing\DingtalkRobot\Exceptions\CannotSendException
+     * @throws \Zing\DingtalkRobot\Exceptions\InvalidArgumentException
+     */
     public function testSendWrongMessage(): void
     {
         $robot = $this->makeRobot(false);
         $this->expectException(CannotSendException::class);
         $robot->send(new FeedCardMessage([]));
-    }
-
-    protected function makeRobot($success = true): Robot
-    {
-        $robot = new Robot(getenv('ROBOT_ACCESS_TOKEN'), getenv('ROBOT_SECRET'));
-
-        if (getenv('MOCK') === 'true') {
-            $content = $success ? '{"errcode":0,"errmsg":"ok"}' : '{"errcode":400602,"errmsg":"miss param : feedCard->links"}';
-            $mock = new MockHandler([new Response(200, [], $content)]);
-            $handlerStack = HandlerStack::create($mock);
-            $client = new Client(
-                [
-                    'handler' => $handlerStack,
-                ]
-            );
-
-            $reflect = new ReflectionObject($robot);
-            $property = $reflect->getProperty('client');
-            $property->setAccessible(true);
-            $property->setValue($robot, $client);
-        }
-
-        return $robot;
     }
 
     public function testSign(): void

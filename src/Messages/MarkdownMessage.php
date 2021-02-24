@@ -23,6 +23,14 @@ class MarkdownMessage implements Message
 
     public function toArray(): array
     {
+        if (isset($this->at['atMobiles'])) {
+            foreach ($this->at['atMobiles'] as $mobile) {
+                if (strpos($this->text, sprintf('@%s', $mobile)) === false) {
+                    $this->text .= sprintf('@%s', $mobile);
+                }
+            }
+        }
+
         return [
             'msgtype' => $this->type(),
             'markdown' => [
