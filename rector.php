@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Rector\CodingStyle\Rector\ClassConst\VarConstantCommentRector;
 use Rector\Core\Configuration\Option;
 use Rector\DeadCode\Rector\Class_\RemoveEmptyAbstractClassRector;
 use Rector\PHPUnit\Rector\Class_\AddSeeTestAnnotationRector;
@@ -37,6 +38,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             AddSeeTestAnnotationRector::class,
             MakeOnlyUsedByChildrenProtectedRector::class,
             RemoveEmptyAbstractClassRector::class,
+            VarConstantCommentRector::class,
         ]
     );
     $parameters->set(

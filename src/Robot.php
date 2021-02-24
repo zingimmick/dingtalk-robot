@@ -10,8 +10,10 @@ use Zing\DingtalkRobot\Messages\TextMessage;
 
 class Robot
 {
+    public const BASE_URI = 'https://oapi.dingtalk.com';
+
     /**
-     * @var string
+     * @var string Access token of robot webhook
      */
     private $accessToken;
 
@@ -26,7 +28,7 @@ class Robot
     private $client;
 
     /**
-     * @param string $accessToken
+     * @param string $accessToken Access token of robot webhook
      * @param string|null $secret 密钥，机器人安全设置页面，加签一栏下面显示的SEC开头的字符串
      */
     public function __construct(string $accessToken, ?string $secret)
@@ -35,7 +37,7 @@ class Robot
         $this->secret = $secret;
         $this->client = new Client(
             [
-                'base_uri' => 'https://oapi.dingtalk.com',
+                'base_uri' => self::BASE_URI,
             ]
         );
     }
@@ -84,7 +86,13 @@ class Robot
         return $data;
     }
 
-    public static function sign($timestamp, $secret): string
+    /**
+     * @param string|int $timestamp 时间戳
+     * @param string $secret 密钥
+     *
+     * @return string 签名
+     */
+    public static function sign($timestamp, string $secret): string
     {
         $data = $timestamp . "\n" . $secret;
 
