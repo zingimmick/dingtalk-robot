@@ -8,4 +8,17 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 <!-- changelog-linker -->
 
-## Unreleased
+## [0.0.1] - 2021-02-24
+
+### Changed
+
+- [#2] Setup test environment
+- [#3] Auto at with markdown
+
+### Removed
+
+- [#4] Remove mockery/mockery from dependencies
+
+[#4]: https://github.com/zingimmick/dingtalk-robot/pull/4
+[#3]: https://github.com/zingimmick/dingtalk-robot/pull/3
+[#2]: https://github.com/zingimmick/dingtalk-robot/pull/2
