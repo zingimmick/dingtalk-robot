@@ -2,7 +2,6 @@
 
 namespace Zing\DingtalkRobot\Tests;
 
-use GuzzleHttp\Psr7\Message;
 use GuzzleHttp\Psr7\Response;
 use Zing\DingtalkRobot\Exceptions\CannotSendException;
 use Zing\DingtalkRobot\Exceptions\InvalidArgumentException;
@@ -16,6 +15,7 @@ use Zing\DingtalkRobot\Messages\MarkdownMessage;
 use Zing\DingtalkRobot\Messages\SingleActionCardMessage;
 use Zing\DingtalkRobot\Messages\TextMessage;
 use Zing\DingtalkRobot\Robot;
+use function GuzzleHttp\Psr7\rewind_body;
 
 class RobotTest extends TestCase
 {
@@ -119,7 +119,7 @@ class RobotTest extends TestCase
         self::assertCount(1, $this->container);
         $response = $this->container[0]['response'];
         self::assertInstanceOf(Response::class, $response);
-        Message::rewindBody($response);
+        rewind_body($response);
         self::assertSame(ResponseContentList::SUCCESS, $response->getBody()->getContents());
     }
 

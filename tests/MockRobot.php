@@ -24,7 +24,7 @@ trait MockRobot
 
     protected function mock(): bool
     {
-        return (bool) getenv('MOCK') ?: true;
+        return getenv('MOCK') !== 'false';
     }
 
     protected $container = [];
