@@ -11,51 +11,33 @@ jobs:
 
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
+      fail-fast: true
       matrix:
         php: [7.2, 7.3, 7.4, 8.0]
-        stability: [prefer-lowest, prefer-stable]
-        mock: [true]
-        include:
-          - php: 7.4
-            stability: prefer-stable
-            mock: false
+        stability: [lowest, highest]
 
     name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
-
-    environment: test
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Cache dependencies
-        uses: actions/cache@v2.1.4
-        with:
-          path: ~/.composer/cache/files
-          key: dependencies-php-${{ matrix.php }}-composer-${{ matrix.stability }}-${{ hashFiles('composer.json') }}
-
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, gd, xdebug
           coverage: xdebug
 
       - name: Setup problem matchers for PHPUnit
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-      - name: Remove dev dependencies not support for PHP 8.0
-        run: composer remove zing/coding-standard --dev --no-update
-        if: "matrix.php >= 8"
-
       - name: Install dependencies
-        run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+        uses: ramsey/composer-install@v1
+        with:
+          dependency-versions: ${{ matrix.stability }}
 
       - name: Execute tests
-        env:
-          ROBOT_ACCESS_TOKEN: ${{ secrets.ROBOT_ACCESS_TOKEN }}
-          ROBOT_SECRET: ${{ secrets.ROBOT_SECRET }}
-          MOCK: ${{ matrix.mock }}
         run: composer run-script test:phpunit -- --coverage-clover coverage.xml
 
       - name: Upload coverage to Codecov
