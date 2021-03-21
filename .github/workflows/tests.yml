@@ -11,12 +11,19 @@ jobs:
 
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         php: [7.2, 7.3, 7.4, 8.0]
         stability: [lowest, highest]
+        mock: [true]
+        include:
+          - php: 7.4
+            stability: prefer-stable
+            mock: false
 
     name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
+
+    environment: test
 
     steps:
       - name: Checkout code
@@ -26,7 +33,6 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, gd, xdebug
           coverage: xdebug
 
       - name: Setup problem matchers for PHPUnit
@@ -38,6 +44,10 @@ jobs:
           dependency-versions: ${{ matrix.stability }}
 
       - name: Execute tests
+        env:
+          ROBOT_ACCESS_TOKEN: ${{ secrets.ROBOT_ACCESS_TOKEN }}
+          ROBOT_SECRET: ${{ secrets.ROBOT_SECRET }}
+          MOCK: ${{ matrix.mock }}
         run: composer run-script test:phpunit -- --coverage-clover coverage.xml
 
       - name: Upload coverage to Codecov
