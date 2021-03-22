@@ -1,8 +1,10 @@
 name: tests
 
 on:
-  push:
   pull_request:
+  push:
+    branches:
+      - master
   schedule:
     - cron: '0 0 * * *'
 
@@ -18,7 +20,7 @@ jobs:
         mock: [true]
         include:
           - php: 7.4
-            stability: prefer-stable
+            stability: highest
             mock: false
 
     name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
