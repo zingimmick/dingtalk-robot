@@ -21,12 +21,9 @@ class FeedCardMessage implements Message
         return [
             'msgtype' => $this->type(),
             'feedCard' => [
-                'links' => array_map(
-                    static function (Link $link) {
-                        return $link->toArray();
-                    },
-                    $this->links
-                ),
+                'links' => array_map(static function (Link $link) {
+                    return $link->toArray();
+                }, $this->links),
             ],
         ];
     }

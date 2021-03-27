@@ -43,7 +43,7 @@ class Robot
     }
 
     /**
-     * @param \Zing\DingtalkRobot\Messages\Message|string $message
+     * @param \Zing\DingtalkRobot\Messages\Message|string|mixed $message
      *
      * @throws \GuzzleHttp\Exception\GuzzleException|\Zing\DingtalkRobot\Exceptions\CannotSendException|\Zing\DingtalkRobot\Exceptions\InvalidArgumentException
      *
@@ -71,13 +71,10 @@ class Robot
             $query['sign'] = $sign;
         }
 
-        $response = $this->client->post(
-            'robot/send',
-            [
-                'query' => $query,
-                'json' => $message->toArray(),
-            ]
-        );
+        $response = $this->client->post('robot/send', [
+            'query' => $query,
+            'json' => $message->toArray(),
+        ]);
         $data = json_decode($response->getBody()->getContents(), true);
         if ($data['errcode'] !== 0) {
             throw new CannotSendException($data['errmsg']);

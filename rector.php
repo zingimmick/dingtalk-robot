@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 use Rector\CodingStyle\Rector\ClassConst\VarConstantCommentRector;
 use Rector\Core\Configuration\Option;
-use Rector\DeadCode\Rector\Class_\RemoveEmptyAbstractClassRector;
+use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
+use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
+use Rector\Doctrine\Set\DoctrineSetList;
+use Rector\Laravel\Set\LaravelSetList;
 use Rector\PHPUnit\Rector\Class_\AddSeeTestAnnotationRector;
+use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Privatization\Rector\Class_\ChangeReadOnlyVariableWithDefaultValueToConstantRector;
 use Rector\Privatization\Rector\Class_\FinalizeClassesWithoutChildrenRector;
-use Rector\Privatization\Rector\ClassMethod\MakeOnlyUsedByChildrenProtectedRector;
 use Rector\Set\ValueObject\SetList;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
@@ -18,11 +21,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         Option::SETS,
         [
             SetList::ACTION_INJECTION_TO_CONSTRUCTOR_INJECTION,
-            SetList::ARRAY_STR_FUNCTIONS_TO_STATIC_CALL,
+            LaravelSetList::ARRAY_STR_FUNCTIONS_TO_STATIC_CALL,
             SetList::CODING_STYLE,
-            SetList::PHPUNIT_CODE_QUALITY,
+            PHPUnitSetList::PHPUNIT_CODE_QUALITY,
             SetList::PRIVATIZATION,
-            SetList::DOCTRINE_CODE_QUALITY,
+            DoctrineSetList::DOCTRINE_CODE_QUALITY,
             SetList::DEAD_CODE,
             SetList::CODE_QUALITY,
             SetList::PHP_70,
@@ -36,9 +39,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             FinalizeClassesWithoutChildrenRector::class,
             ChangeReadOnlyVariableWithDefaultValueToConstantRector::class,
             AddSeeTestAnnotationRector::class,
-            MakeOnlyUsedByChildrenProtectedRector::class,
-            RemoveEmptyAbstractClassRector::class,
             VarConstantCommentRector::class,
+            RemoveUselessParamTagRector::class,
+            RemoveUselessReturnTagRector::class,
         ]
     );
     $parameters->set(
