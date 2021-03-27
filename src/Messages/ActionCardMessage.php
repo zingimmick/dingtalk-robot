@@ -58,12 +58,9 @@ class ActionCardMessage implements Message
                 'text' => $this->text,
                 'btnOrientation' => $this->btnOrientation,
                 'hideAvatar' => $this->hideAvatar,
-                'btns' => array_map(
-                    static function (Button $button) {
-                        return $button->toArray();
-                    },
-                    $this->btns
-                ),
+                'btns' => array_map(static function (Button $button) {
+                    return $button->toArray();
+                }, $this->btns),
             ],
         ];
     }

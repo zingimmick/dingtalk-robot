@@ -7,7 +7,7 @@ trait InteractsWithAt
     protected $at = [];
 
     /**
-     * @param array|string $mobiles 被@人的手机号
+     * @param array|string|int $mobiles 被@人的手机号
      *
      * @throws \InvalidArgumentException
      *
