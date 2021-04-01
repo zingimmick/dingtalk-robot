@@ -34,7 +34,7 @@ class RobotTest extends TestCase
                 return (new MarkdownMessage(
                     '杭州天气',
                     "#### 杭州天气 \n> 9度，西北风1级，空气良89，相对温度73%\n> ![screenshot](https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png)\n> ###### 10点20分发布 [天气](https://www.dingtalk.com) \n"
-                ))->at(18817393279);
+                ))->at('150XXXXXXXX');
             }, function () {
                 return new LinkMessage(
                     '时代的火车向前开',
