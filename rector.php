@@ -6,8 +6,6 @@ use Rector\CodingStyle\Rector\ClassConst\VarConstantCommentRector;
 use Rector\Core\Configuration\Option;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
-use Rector\Doctrine\Set\DoctrineSetList;
-use Rector\Laravel\Set\LaravelSetList;
 use Rector\PHPUnit\Rector\Class_\AddSeeTestAnnotationRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Privatization\Rector\Class_\ChangeReadOnlyVariableWithDefaultValueToConstantRector;
@@ -20,12 +18,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(
         Option::SETS,
         [
-            SetList::ACTION_INJECTION_TO_CONSTRUCTOR_INJECTION,
-            LaravelSetList::ARRAY_STR_FUNCTIONS_TO_STATIC_CALL,
             SetList::CODING_STYLE,
             PHPUnitSetList::PHPUNIT_CODE_QUALITY,
             SetList::PRIVATIZATION,
-            DoctrineSetList::DOCTRINE_CODE_QUALITY,
             SetList::DEAD_CODE,
             SetList::CODE_QUALITY,
             SetList::PHP_70,
