@@ -50,14 +50,8 @@ trait MockRobot
 
     private function createHandler($mock, $success): HandlerStack
     {
-        if ($mock) {
-            $content = $success ? ResponseContentList::SUCCESS : ResponseContentList::ERROR;
-            $mock = new MockHandler([new Response(200, [], $content)]);
-
-            $handlerStack = HandlerStack::create($mock);
-        } else {
-            $handlerStack = HandlerStack::create();
-        }
+        $content = $success ? ResponseContentList::SUCCESS : ResponseContentList::ERROR;
+        $handlerStack = HandlerStack::create($mock ? new MockHandler([new Response(200, [], $content)]) : null);
 
         $history = Middleware::history($this->container);
         $handlerStack->push($history);
