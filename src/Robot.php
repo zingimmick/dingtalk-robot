@@ -77,7 +77,7 @@ class Robot
         ]);
         $data = json_decode($response->getBody()->getContents(), true);
         if ($data['errcode'] !== 0) {
-            throw new CannotSendException($data['errmsg']);
+            throw new CannotSendException($data['errmsg'], $data['errcode']);
         }
 
         return $data;
