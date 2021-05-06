@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Zing\DingtalkRobot\Tests;
 
 use GuzzleHttp\Psr7\Response;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Zing\DingtalkRobot\Tests;
 
 use GuzzleHttp\Client;
@@ -14,17 +16,17 @@ trait MockRobot
 {
     protected function getAccessToken()
     {
-        return getenv('ROBOT_ACCESS_TOKEN');
+        return (string) getenv('ROBOT_ACCESS_TOKEN');
     }
 
     protected function getSecret()
     {
-        return getenv('ROBOT_SECRET');
+        return (string) getenv('ROBOT_SECRET');
     }
 
     protected function mock(): bool
     {
-        return getenv('MOCK') !== 'false';
+        return (string) getenv('MOCK') !== 'false';
     }
 
     protected $container = [];
