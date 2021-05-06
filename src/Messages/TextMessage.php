@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Zing\DingtalkRobot\Messages;
 
 class TextMessage implements Message
