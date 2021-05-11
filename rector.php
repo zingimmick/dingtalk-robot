@@ -19,13 +19,16 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         Option::SETS,
         [
             SetList::CODING_STYLE,
-            PHPUnitSetList::PHPUNIT_CODE_QUALITY,
-            SetList::PRIVATIZATION,
-            SetList::DEAD_CODE,
             SetList::CODE_QUALITY,
+            SetList::CODE_QUALITY_STRICT,
+            SetList::DEAD_CODE,
+            SetList::PRIVATIZATION,
+            SetList::NAMING,
+            PHPUnitSetList::PHPUNIT_CODE_QUALITY,
             SetList::PHP_70,
             SetList::PHP_71,
             SetList::PHP_72,
+            SetList::EARLY_RETURN,
         ]
     );
     $parameters->set(
