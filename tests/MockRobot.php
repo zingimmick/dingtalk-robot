@@ -42,8 +42,8 @@ trait MockRobot
             ]
         );
 
-        $reflect = new ReflectionObject($robot);
-        $property = $reflect->getProperty('client');
+        $reflectionObject = new ReflectionObject($robot);
+        $property = $reflectionObject->getProperty('client');
         $property->setAccessible(true);
         $property->setValue($robot, $client);
 

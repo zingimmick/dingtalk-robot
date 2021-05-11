@@ -137,10 +137,10 @@ class RobotTest extends TestCase
 
     public function testEmptyMessage(): void
     {
-        $message = new EmptyMessage();
-        self::assertSame('empty', $message->type());
+        $emptyMessage = new EmptyMessage();
+        self::assertSame('empty', $emptyMessage->type());
         self::assertSame([
             'msgtype' => 'empty',
-        ], $message->toArray());
+        ], $emptyMessage->toArray());
     }
 }
