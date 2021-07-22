@@ -45,6 +45,7 @@ class MarkdownMessage implements Message
                 $this->text .= sprintf('@%s', $mobile);
             }
         }
+
         return $this->text;
     }
 }
