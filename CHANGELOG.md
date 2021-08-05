@@ -111,3 +111,7 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#2]: https://github.com/zingimmick/dingtalk-robot/pull/2
 [0.1.0]: https://github.com/zingimmick/dingtalk-robot/compare/0.0.2...0.1.0
 [0.0.2]: https://github.com/zingimmick/dingtalk-robot/compare/0.0.1...0.0.2
+[0.1.1]: https://github.com/zingimmick/dingtalk-robot/compare/0.1.0...0.1.1
+[1.0.0]: https://github.com/zingimmick/dingtalk-robot/compare/0.1.1...1.0.0
+[1.0.1]: https://github.com/zingimmick/dingtalk-robot/compare/1.0.0...1.0.1
+[1.0.2]: https://github.com/zingimmick/dingtalk-robot/compare/1.0.1...1.0.2
