@@ -8,6 +8,68 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 <!-- changelog-linker -->
 
+## [1.0.2] - 2021-08-05
+
+### Added
+
+- [#25] Bump EndBug/add-and-commit from 7 to 7.2.1
+
+### Changed
+
+- [#39] Test markdown message without mobiles
+- [#38] Bump codecov/codecov-action from 2.0.1 to 2.0.2
+- [#35] Bump codecov/codecov-action from 1.5.2 to 2.0.1
+- [#34] Bump shivammathur/setup-php from 2.11.0 to 2.12.0
+- [#32] Support GuzzleHttp PSR-7 2.0
+- [#30] Prevents tests from failing when upload coverage fails
+- [#29] Bump codecov/codecov-action from 1.5.0 to 1.5.2
+- [#28] Coding Standard 4
+- [#27] Bump actions/checkout from 2 to 2.3.4
+- [#26] Bump shivammathur/setup-php from 2 to 2.11.0
+- [#24] Bump codecov/codecov-action from 1 to 1.5.0
+- [#23] Apply more rector sets
+
+### Fixed
+
+- [#37] Fix cognitive complexity
+
+### Removed
+
+- [#33] Remove residual configuration
+
+## [1.0.1] - 2021-05-06
+
+### Changed
+
+- [#22] Declare strict types
+
+## [1.0.0] - 2021-05-06
+
+### Added
+
+- [#21] Add errcode to Exception
+
+### Changed
+
+- [#20] Rector rectify
+- [#17] Bump codecov/codecov-action from v1.3.1 to v1.3.2
+- [#15] Use repository secrets instead of environment secrets
+
+### Removed
+
+- [#19] Remove else expression in createHandler
+- [#16] Remove renovate config
+
+## [0.1.1] - 2021-04-01
+
+### Changed
+
+- [#13] Update CHANGELOG.md
+
+### Removed
+
+- [#14] Remove mobile
+
 ## [0.1.0]
 
 ### Added
