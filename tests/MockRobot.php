@@ -16,12 +16,12 @@ trait MockRobot
 {
     protected function getAccessToken()
     {
-        return (string) getenv('ROBOT_ACCESS_TOKEN');
+        return (string) getenv('ROBOT_ACCESS_TOKEN') ?: 'robot-access-token';
     }
 
     protected function getSecret()
     {
-        return (string) getenv('ROBOT_SECRET');
+        return (string) getenv('ROBOT_SECRET') ?: 'robot-secret';
     }
 
     protected function mock(): bool
