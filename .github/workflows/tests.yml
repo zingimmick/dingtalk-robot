@@ -43,7 +43,7 @@ jobs:
         with:
           dependency-versions: ${{ matrix.stability }}
 
-      - run: echo ${{ github.event }} | jq
+      - run: echo ${{ github.event_name }}
 
       - name: Execute tests
         env:
