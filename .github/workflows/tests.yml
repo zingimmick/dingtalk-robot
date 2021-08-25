@@ -43,6 +43,8 @@ jobs:
         with:
           dependency-versions: ${{ matrix.stability }}
 
+      - run: echo ${{ github.event }}
+
       - name: Execute tests
         env:
           ROBOT_ACCESS_TOKEN: ${{ secrets.ROBOT_ACCESS_TOKEN }}
