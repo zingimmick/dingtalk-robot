@@ -119,6 +119,7 @@ class RobotTest extends TestCase
         } else {
             Message::rewindBody($response);
         }
+
         self::assertSame(ResponseContentList::SUCCESS, $response->getBody()->getContents());
     }
 
