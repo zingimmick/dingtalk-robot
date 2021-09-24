@@ -2,10 +2,7 @@
 
 declare(strict_types=1);
 
-use Rector\CodingStyle\Rector\ClassConst\VarConstantCommentRector;
 use Rector\Core\Configuration\Option;
-use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
-use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
 use Rector\PHPUnit\Rector\Class_\AddSeeTestAnnotationRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Privatization\Rector\Class_\ChangeReadOnlyVariableWithDefaultValueToConstantRector;
@@ -25,9 +22,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(
         Option::SKIP,
         [
-            VarConstantCommentRector::class,
-            RemoveUselessParamTagRector::class,
-            RemoveUselessReturnTagRector::class,
             AddSeeTestAnnotationRector::class,
             ChangeReadOnlyVariableWithDefaultValueToConstantRector::class,
             FinalizeClassesWithoutChildrenRector::class,
