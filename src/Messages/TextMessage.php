@@ -10,9 +10,6 @@ class TextMessage implements Message
 
     private $message;
 
-    /**
-     * @param string $message
-     */
     public function __construct(string $message)
     {
         $this->message = $message;
