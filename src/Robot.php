@@ -50,8 +50,6 @@ class Robot
     /**
      * @param \Zing\DingtalkRobot\Messages\Message|string|mixed $message
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException|\Zing\DingtalkRobot\Exceptions\CannotSendException|\Zing\DingtalkRobot\Exceptions\InvalidArgumentException
-     *
      * @return mixed
      */
     public function send($message)

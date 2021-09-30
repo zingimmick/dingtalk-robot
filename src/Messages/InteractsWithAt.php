@@ -11,8 +11,6 @@ trait InteractsWithAt
     /**
      * @param array|string|int $mobiles 被@人的手机号
      *
-     * @throws \InvalidArgumentException
-     *
      * @return $this
      */
     public function at($mobiles): self
