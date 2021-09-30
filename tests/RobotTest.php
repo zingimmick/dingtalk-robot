@@ -102,9 +102,6 @@ class RobotTest extends TestCase
      * @dataProvider messages
      *
      * @param \Zing\DingtalkRobot\Messages\Message|string $messageGenerator
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Zing\DingtalkRobot\Exceptions\CannotSendException|\Zing\DingtalkRobot\Exceptions\InvalidArgumentException
      */
     public function testSend($messageGenerator): void
     {
@@ -123,11 +120,6 @@ class RobotTest extends TestCase
         self::assertSame(ResponseContentList::SUCCESS, $response->getBody()->getContents());
     }
 
-    /**
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Zing\DingtalkRobot\Exceptions\CannotSendException
-     * @throws \Zing\DingtalkRobot\Exceptions\InvalidArgumentException
-     */
     public function testSendInvalidMessage(): void
     {
         $robot = $this->makeRobot();
@@ -135,11 +127,6 @@ class RobotTest extends TestCase
         $robot->send(1);
     }
 
-    /**
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Zing\DingtalkRobot\Exceptions\CannotSendException
-     * @throws \Zing\DingtalkRobot\Exceptions\InvalidArgumentException
-     */
     public function testSendWrongMessage(): void
     {
         $robot = $this->makeRobot(false);
