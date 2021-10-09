@@ -6,12 +6,24 @@ namespace Zing\DingtalkRobot\Messages;
 
 class LinkMessage implements Message
 {
+    /**
+     * @var string
+     */
     private $title;
 
+    /**
+     * @var string
+     */
     private $text;
 
+    /**
+     * @var string
+     */
     private $messageUrl;
 
+    /**
+     * @var string
+     */
     private $picUrl;
 
     public function __construct(string $title, string $text, string $messageUrl, string $picUrl = '')

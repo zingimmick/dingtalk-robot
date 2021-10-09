@@ -6,10 +6,13 @@ namespace Zing\DingtalkRobot\Messages;
 
 trait InteractsWithAt
 {
+    /**
+     * @var array<string, bool|array>
+     */
     protected $at = [];
 
     /**
-     * @param array|string|int $mobiles 被@人的手机号
+     * @param array<string|int>|string|int $mobiles 被@人的手机号
      *
      * @return $this
      */
@@ -25,11 +28,9 @@ trait InteractsWithAt
     /**
      * 是否@所有人。
      *
-     * @param bool $atAll
-     *
      * @return $this
      */
-    public function atAll($atAll = true): self
+    public function atAll(bool $atAll = true): self
     {
         $this->at['isAtAll'] = $atAll;
 

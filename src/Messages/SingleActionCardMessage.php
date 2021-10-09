@@ -6,22 +6,26 @@ namespace Zing\DingtalkRobot\Messages;
 
 class SingleActionCardMessage implements Message
 {
+    /**
+     * @var string
+     */
     private $title;
 
+    /**
+     * @var string
+     */
     private $text;
 
+    /**
+     * @var string
+     */
     private $singleTitle;
 
+    /**
+     * @var string
+     */
     private $singleURL;
 
-    /**
-     * ActionCardMessage constructor.
-     *
-     * @param $text
-     * @param $title
-     * @param $singleTitle
-     * @param $singleURL
-     */
     public function __construct(string $title, string $text, string $singleTitle, string $singleURL)
     {
         $this->title = $title;
