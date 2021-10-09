@@ -41,7 +41,8 @@
         "test:phpunit": "phpunit --colors=always",
         "lint": [
             "@lint:rector",
-            "@lint:ecs"
+            "@lint:ecs",
+            "@lint:phpstan"
         ],
         "fix": [
             "@fix:rector",

@@ -24,6 +24,9 @@ class RobotTest extends TestCase
 {
     use MockRobot;
 
+    /**
+     * @return array<array<\Closure>>
+     */
     public function messages(): array
     {
         $generators = [

@@ -6,9 +6,15 @@ namespace Zing\DingtalkRobot\Messages;
 
 class FeedCardMessage implements Message
 {
-    private $links;
+    /**
+     * @var array<\Zing\DingtalkRobot\Messages\Link>
+     */
+    private $links = [];
 
-    public function __construct($links)
+    /**
+     * @param array<\Zing\DingtalkRobot\Messages\Link> $links
+     */
+    public function __construct(array $links)
     {
         $this->links = $links;
     }

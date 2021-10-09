@@ -8,8 +8,14 @@ class MarkdownMessage implements Message
 {
     use InteractsWithAt;
 
+    /**
+     * @var string
+     */
     private $title;
 
+    /**
+     * @var string
+     */
     private $text;
 
     public function __construct(string $title, string $text)
@@ -41,7 +47,7 @@ class MarkdownMessage implements Message
             return $this->text;
         }
 
-        foreach ($this->at['atMobiles'] as $mobile) {
+        foreach ((array) $this->at['atMobiles'] as $mobile) {
             if (strpos($this->text, sprintf('@%s', $mobile)) === false) {
                 $this->text .= sprintf('@%s', $mobile);
             }
