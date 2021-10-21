@@ -11,6 +11,9 @@ class EmptyMessage implements Message
         return 'empty';
     }
 
+    /**
+     * @return array<string, string>
+     */
     public function toArray(): array
     {
         return [

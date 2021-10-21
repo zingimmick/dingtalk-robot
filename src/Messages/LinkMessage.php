@@ -39,6 +39,9 @@ class LinkMessage implements Message
         return 'link';
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function toArray(): array
     {
         return [

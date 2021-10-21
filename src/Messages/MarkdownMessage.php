@@ -29,6 +29,9 @@ class MarkdownMessage implements Message
         return 'markdown';
     }
 
+    /**
+     * @return array<string, array<mixed[]|bool|string>>|array<string, string>
+     */
     public function toArray(): array
     {
         return [
