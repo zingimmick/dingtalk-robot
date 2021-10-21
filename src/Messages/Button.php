@@ -24,6 +24,9 @@ class Button implements Arrayable
         $this->actionURL = $actionURL;
     }
 
+    /**
+     * @return array<string, string>
+     */
     public function toArray(): array
     {
         return [

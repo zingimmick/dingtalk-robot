@@ -39,6 +39,9 @@ class SingleActionCardMessage implements Message
         return 'actionCard';
     }
 
+    /**
+     * @return array<string, array|mixed>
+     */
     public function toArray(): array
     {
         return [

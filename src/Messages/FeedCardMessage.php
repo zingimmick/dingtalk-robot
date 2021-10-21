@@ -24,12 +24,15 @@ class FeedCardMessage implements Message
         return 'feedCard';
     }
 
+    /**
+     * @return array<string, array|mixed>
+     */
     public function toArray(): array
     {
         return [
             'msgtype' => $this->type(),
             'feedCard' => [
-                'links' => array_map(static function (Link $link) {
+                'links' => array_map(static function (Link $link): array {
                     return $link->toArray();
                 }, $this->links),
             ],

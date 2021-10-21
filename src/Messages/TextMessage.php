@@ -23,6 +23,9 @@ class TextMessage implements Message
         return 'text';
     }
 
+    /**
+     * @return array<string, array<mixed[]|bool|string>>|array<string, string>
+     */
     public function toArray(): array
     {
         return [

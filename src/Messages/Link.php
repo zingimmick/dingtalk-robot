@@ -30,6 +30,9 @@ class Link implements Arrayable
         $this->picURL = $picURL;
     }
 
+    /**
+     * @return array<string, string>
+     */
     public function toArray(): array
     {
         return [

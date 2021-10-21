@@ -44,24 +44,14 @@ class ActionCardMessage implements Message
         $this->btns = $btns;
     }
 
-    /**
-     * @param bool $hide
-     *
-     * @return $this
-     */
-    public function hideAvatar($hide = true)
+    public function hideAvatar(bool $hide = true): self
     {
         $this->hideAvatar = $hide ? 1 : 0;
 
         return $this;
     }
 
-    /**
-     * @param bool $horizontally
-     *
-     * @return $this
-     */
-    public function btnHorizontally($horizontally = true)
+    public function btnHorizontally(bool $horizontally = true): self
     {
         $this->btnOrientation = $horizontally ? 1 : 0;
 
@@ -73,6 +63,9 @@ class ActionCardMessage implements Message
         return 'actionCard';
     }
 
+    /**
+     * @return array<string, array|mixed>
+     */
     public function toArray(): array
     {
         return [
@@ -82,7 +75,7 @@ class ActionCardMessage implements Message
                 'text' => $this->text,
                 'btnOrientation' => $this->btnOrientation,
                 'hideAvatar' => $this->hideAvatar,
-                'btns' => array_map(static function (Button $button) {
+                'btns' => array_map(static function (Button $button): array {
                     return $button->toArray();
                 }, $this->btns),
             ],
