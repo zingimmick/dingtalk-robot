@@ -44,9 +44,6 @@ class ActionCardMessage implements Message
         $this->btns = $btns;
     }
 
-    /**
-     * @return $this
-     */
     public function hideAvatar(bool $hide = true): self
     {
         $this->hideAvatar = $hide ? 1 : 0;
@@ -54,9 +51,6 @@ class ActionCardMessage implements Message
         return $this;
     }
 
-    /**
-     * @return $this
-     */
     public function btnHorizontally(bool $horizontally = true): self
     {
         $this->btnOrientation = $horizontally ? 1 : 0;
