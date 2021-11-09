@@ -30,7 +30,7 @@ trait MockRobot
     }
 
     /**
-     * @var array<int, array>
+     * @var array<int, array{response: \Psr\Http\Message\MessageInterface}>
      */
     protected $container = [];
 

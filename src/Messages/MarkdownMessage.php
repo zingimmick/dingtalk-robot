@@ -30,7 +30,7 @@ class MarkdownMessage implements Message
     }
 
     /**
-     * @return array<string, array<mixed[]|bool|string>>|array<string, string>
+     * @return array<string, array<string, array<int|string>|bool|string>|string>
      */
     public function toArray(): array
     {
@@ -50,7 +50,7 @@ class MarkdownMessage implements Message
             return $this->text;
         }
 
-        foreach ((array) $this->at['atMobiles'] as $mobile) {
+        foreach ($this->at['atMobiles'] as $mobile) {
             if (strpos($this->text, sprintf('@%s', $mobile)) === false) {
                 $this->text .= sprintf('@%s', $mobile);
             }

@@ -19,6 +19,7 @@
         "guzzlehttp/guzzle": "^6.3 || ^7.2"
     },
     "require-dev": {
+        "phpstan/phpstan": "^1.0",
         "phpunit/phpunit": "^8.0,<8.5.12 || ^9.3.3",
         "zing/coding-standard": "^4.0"
     },

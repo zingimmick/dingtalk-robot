@@ -50,9 +50,9 @@ class Robot
     /**
      * @param \Zing\DingtalkRobot\Messages\Message|string|mixed $message
      *
-     * @return mixed
+     * @return array<string, int>|array<string, string>
      */
-    public function send($message)
+    public function send($message): array
     {
         if (is_string($message)) {
             $message = new TextMessage($message);
@@ -78,6 +78,7 @@ class Robot
             'query' => $query,
             'json' => $message->toArray(),
         ]);
+        /** @var array{errcode: int, errmsg: string} $data */
         $data = json_decode($response->getBody()->getContents(), true);
         if ($data['errcode'] !== 0) {
             throw new CannotSendException($data['errmsg'], $data['errcode']);

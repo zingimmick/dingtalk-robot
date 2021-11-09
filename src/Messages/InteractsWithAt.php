@@ -7,7 +7,7 @@ namespace Zing\DingtalkRobot\Messages;
 trait InteractsWithAt
 {
     /**
-     * @var array<string, bool|array>
+     * @var array{atMobiles?: array<string|int>, isAtAll?: bool}
      */
     protected $at = [];
 
