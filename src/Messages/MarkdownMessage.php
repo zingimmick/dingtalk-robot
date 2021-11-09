@@ -30,7 +30,7 @@ class MarkdownMessage implements Message
     }
 
     /**
-     * @return array<string, array<int|string>|bool|string>|string>
+     * @return mixed[][] >
      */
     public function toArray(): array
     {
