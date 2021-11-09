@@ -50,7 +50,7 @@ class MarkdownMessage implements Message
             return $this->text;
         }
 
-        foreach ((array) $this->at['atMobiles'] as $mobile) {
+        foreach ($this->at['atMobiles'] as $mobile) {
             if (strpos($this->text, sprintf('@%s', $mobile)) === false) {
                 $this->text .= sprintf('@%s', $mobile);
             }

@@ -50,9 +50,9 @@ class Robot
     /**
      * @param \Zing\DingtalkRobot\Messages\Message|string|mixed $message
      *
-     * @return mixed
+     * @return array<string, int>|array<string, string>
      */
-    public function send($message)
+    public function send($message): array
     {
         if (is_string($message)) {
             $message = new TextMessage($message);
