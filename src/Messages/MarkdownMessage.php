@@ -30,7 +30,7 @@ class MarkdownMessage implements Message
     }
 
     /**
-     * @return array<string, array<int|string>|bool|string>
+     * @return array<string, array<string, array<int|string>|bool|string>|string>
      */
     public function toArray(): array
     {
