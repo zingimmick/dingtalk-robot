@@ -24,7 +24,7 @@ class TextMessage implements Message
     }
 
     /**
-     * @return array<string, mixed[]>
+     * @return array<string, array<int|string>|bool|string>|string>
      */
     public function toArray(): array
     {
