@@ -78,6 +78,7 @@ class Robot
             'query' => $query,
             'json' => $message->toArray(),
         ]);
+        /** @var array{errcode: int, errmsg: string} $data */
         $data = json_decode($response->getBody()->getContents(), true);
         if ($data['errcode'] !== 0) {
             throw new CannotSendException($data['errmsg'], $data['errcode']);
