@@ -4,29 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
-
-<!-- changelog-linker -->
-
 ## [1.0.2] - 2021-08-04
-
-### Added
-
-- [#25] Bump EndBug/add-and-commit from 7 to 7.2.1
 
 ### Changed
 
 - [#39] Test markdown message without mobiles
-- [#38] Bump codecov/codecov-action from 2.0.1 to 2.0.2
-- [#35] Bump codecov/codecov-action from 1.5.2 to 2.0.1
-- [#34] Bump shivammathur/setup-php from 2.11.0 to 2.12.0
 - [#32] Support GuzzleHttp PSR-7 2.0
 - [#30] Prevents tests from failing when upload coverage fails
-- [#29] Bump codecov/codecov-action from 1.5.0 to 1.5.2
 - [#28] Coding Standard 4
-- [#27] Bump actions/checkout from 2 to 2.3.4
-- [#26] Bump shivammathur/setup-php from 2 to 2.11.0
-- [#24] Bump codecov/codecov-action from 1 to 1.5.0
 - [#23] Apply more rector sets
 
 ### Fixed
@@ -52,7 +37,6 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 ### Changed
 
 - [#20] Rector rectify
-- [#17] Bump codecov/codecov-action from v1.3.1 to v1.3.2
 - [#15] Use repository secrets instead of environment secrets
 
 ### Removed
@@ -79,8 +63,6 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 ### Changed
 
 - [#11] Apply SetList::SYMPLIFY
-- [#7] Bump codecov/codecov-action from v1.2.2 to v1.3.1
-- [#5] Bump codecov/codecov-action from v1.2.1 to v1.2.2
 
 ### Fixed
 
