@@ -20,7 +20,10 @@ use Zing\DingtalkRobot\Messages\TextMessage;
 use Zing\DingtalkRobot\Robot;
 use function GuzzleHttp\Psr7\rewind_body;
 
-class RobotTest extends TestCase
+/**
+ * @internal
+ */
+final class RobotTest extends TestCase
 {
     use MockRobot;
 
