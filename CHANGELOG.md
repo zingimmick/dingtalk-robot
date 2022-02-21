@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.4.0 - 2022-02-21
+
+## What's Changed
+
+- Update zing/coding-standard requirement from ^4.0 to ^4.0 || ^5.0 by @dependabot in https://github.com/zingimmick/dingtalk-robot/pull/62
+- Update license copyright year(s) by @github-actions in https://github.com/zingimmick/dingtalk-robot/pull/63
+- Support composer 2.2 by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/64
+- Simplify ECS skip option by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/65
+- Bump EndBug/add-and-commit from 7.5.0 to 8 by @dependabot in https://github.com/zingimmick/dingtalk-robot/pull/66
+- Fix rector ci by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/68
+- Use PHP version set instead of migration sets by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/69
+- Update zing/coding-standard requirement from ^5.1 to ^5.1 || ^6.0 by @dependabot in https://github.com/zingimmick/dingtalk-robot/pull/67
+- Bump shivammathur/setup-php from 2.16.0 to 2.17.0 by @dependabot in https://github.com/zingimmick/dingtalk-robot/pull/70
+- Bump zing/coding-standard to ^6.1 by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/71
+
+**Full Changelog**: https://github.com/zingimmick/dingtalk-robot/compare/1.3.0...1.4.0
+
 ## 1.3.0 - 2021-12-20
 
 ## What's Changed
