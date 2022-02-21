@@ -112,12 +112,12 @@ final class RobotTest extends TestCase
     public function testSend($messageGenerator): void
     {
         $robot = $this->makeRobot();
-        $message = is_callable($messageGenerator) ? $messageGenerator() : $messageGenerator;
+        $message = \is_callable($messageGenerator) ? $messageGenerator() : $messageGenerator;
         $robot->send($message);
         self::assertCount(1, $this->container);
         $response = $this->container[0]['response'];
         self::assertInstanceOf(Response::class, $response);
-        if (function_exists('\GuzzleHttp\Psr7\rewind_body')) {
+        if (\function_exists('\GuzzleHttp\Psr7\rewind_body')) {
             rewind_body($response);
         } else {
             Message::rewindBody($response);
