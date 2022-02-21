@@ -54,7 +54,7 @@ class Robot
      */
     public function send($message): array
     {
-        if (is_string($message)) {
+        if (\is_string($message)) {
             $message = new TextMessage($message);
         }
 
