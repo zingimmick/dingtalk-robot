@@ -25,7 +25,7 @@ class Button implements Arrayable
     }
 
     /**
-     * @return array<string, string>
+     * @return array{title: string, actionURL: string}
      */
     public function toArray(): array
     {

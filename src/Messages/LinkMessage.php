@@ -40,7 +40,7 @@ class LinkMessage implements Message
     }
 
     /**
-     * @return array<string, mixed>
+     * @return array{msgtype: string, link: array{title: string, text: string, messageUrl: string, picUrl: string}}
      */
     public function toArray(): array
     {

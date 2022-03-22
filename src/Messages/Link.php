@@ -31,7 +31,7 @@ class Link implements Arrayable
     }
 
     /**
-     * @return array<string, string>
+     * @return array{title: string, messageURL: string, picURL: string}
      */
     public function toArray(): array
     {

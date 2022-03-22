@@ -30,7 +30,7 @@ class MarkdownMessage implements Message
     }
 
     /**
-     * @return array<string, array<string, array<int|string>|bool|string>|string>
+     * @return array{msgtype: string, markdown: array{title: string, text: string}, at: array{atMobiles?: int[]|string[], isAtAll?: bool}}
      */
     public function toArray(): array
     {
