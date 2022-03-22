@@ -50,7 +50,7 @@ class Robot
     /**
      * @param \Zing\DingtalkRobot\Messages\Message|string|mixed $message
      *
-     * @return array<string, int>|array<string, string>
+     * @return array{errcode: int, errmsg: string}
      */
     public function send($message): array
     {

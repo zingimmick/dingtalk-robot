@@ -24,7 +24,7 @@ class TextMessage implements Message
     }
 
     /**
-     * @return array<string, array<string, array<int|string>|bool|string>|string>
+     * @return array{msgtype: string, text: array{content: string}, at: array{atMobiles?: int[]|string[], isAtAll?: bool}}
      */
     public function toArray(): array
     {

@@ -40,7 +40,7 @@ class SingleActionCardMessage implements Message
     }
 
     /**
-     * @return array<string, array|mixed>
+     * @return array{msgtype: string, actionCard: array{title: string, text: string, singleTitle: string, singleURL: string}}
      */
     public function toArray(): array
     {

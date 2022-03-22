@@ -12,7 +12,7 @@ class EmptyMessage implements Message
     }
 
     /**
-     * @return array<string, string>
+     * @return array{msgtype: string}
      */
     public function toArray(): array
     {
