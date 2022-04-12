@@ -64,7 +64,7 @@ class ActionCardMessage implements Message
     }
 
     /**
-     * @return array<string, array|mixed>
+     * @return array{msgtype: string, actionCard: array{title: string, text: string, btnOrientation: int, hideAvatar: int, btns: array<mixed, array{title: string, actionURL: string}>}}
      */
     public function toArray(): array
     {

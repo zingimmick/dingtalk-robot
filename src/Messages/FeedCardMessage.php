@@ -25,7 +25,7 @@ class FeedCardMessage implements Message
     }
 
     /**
-     * @return array<string, array|mixed>
+     * @return array{msgtype: string, feedCard: array{links: array<mixed, array{title: string, messageURL: string, picURL: string}>}}
      */
     public function toArray(): array
     {
