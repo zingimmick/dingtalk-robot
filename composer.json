@@ -25,7 +25,7 @@
     "require-dev": {
         "phpstan/phpstan": "^1.0",
         "phpunit/phpunit": "^8.0,<8.5.12 || ^9.3.3",
-        "zing/coding-standard": "^6.1"
+        "zing/coding-standard": "^6.4"
     },
     "autoload": {
         "psr-4": {
