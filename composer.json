@@ -3,6 +3,11 @@
     "description": "Send message via dingtalk robot",
     "keywords": ["dingtalk", "rebot"],
     "license": "MIT",
+    "homepage": "https://github.com/zingimmick/dingtalk-robot",
+    "support": {
+        "issues": "https://github.com/zingimmick/dingtalk-robot/issues",
+        "source": "https://github.com/zingimmick/dingtalk-robot"
+    },
     "authors": [
         {
             "name": "zingimmick",
