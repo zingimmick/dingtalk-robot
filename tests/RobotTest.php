@@ -33,26 +33,26 @@ final class RobotTest extends TestCase
     public function messages(): array
     {
         $generators = [
-            function (): string {
+            static function (): string {
                 return '我就是我, 是不一样的烟火';
             },
-            function (): TextMessage {
+            static function (): TextMessage {
                 return (new TextMessage('我就是我, 是不一样的烟火'))
                     ->atAll();
             },
-            function (): MarkdownMessage {
+            static function (): MarkdownMessage {
                 return (new MarkdownMessage(
                     '杭州天气',
                     "#### 杭州天气 \n> 9度，西北风1级，空气良89，相对温度73%\n> ![screenshot](https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png)\n> ###### 10点20分发布 [天气](https://www.dingtalk.com) \n"
                 ))->at('150XXXXXXXX');
             },
-            function (): MarkdownMessage {
+            static function (): MarkdownMessage {
                 return new MarkdownMessage(
                     '杭州天气',
                     "#### 杭州天气 \n> 9度，西北风1级，空气良89，相对温度73%\n> ![screenshot](https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png)\n> ###### 10点20分发布 [天气](https://www.dingtalk.com) \n"
                 );
             },
-            function (): LinkMessage {
+            static function (): LinkMessage {
                 return new LinkMessage(
                     '时代的火车向前开',
                     '这个即将发布的新版本，创始人xx称它为红树林。而在此之前，每当面临重大升级，产品经理们都会取一个应景的代号，这一次，为什么是红树林',
@@ -60,7 +60,7 @@ final class RobotTest extends TestCase
                     'https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png'
                 );
             },
-            function (): SingleActionCardMessage {
+            static function (): SingleActionCardMessage {
                 return new SingleActionCardMessage(
                     '乔布斯 20 年前想打造一间苹果咖啡厅，而它正是 Apple Store 的前身',
                     '![screenshot](https://gw.alicdn.com/tfs/TB1ut3xxbsrBKNjSZFpXXcXhFXa-846-786.png)
@@ -70,7 +70,7 @@ final class RobotTest extends TestCase
                     'https://www.dingtalk.com/'
                 );
             },
-            function (): ActionCardMessage {
+            static function (): ActionCardMessage {
                 return (new ActionCardMessage(
                     '我 20 年前想打造一间苹果咖啡厅，而它正是 Apple Store 的前身',
                     "![screenshot](https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png) \n\n #### 乔布斯 20 年前想打造的苹果咖啡厅 \n\n Apple Store 的设计正从原来满满的科技感走向生活化，而其生活化的走向其实可以追溯到 20 年前苹果一个建立咖啡馆的计划",
@@ -81,7 +81,7 @@ final class RobotTest extends TestCase
                 ))->btnHorizontally()
                     ->hideAvatar();
             },
-            function (): FeedCardMessage {
+            static function (): FeedCardMessage {
                 return new FeedCardMessage(
                     [
                         new Link(
