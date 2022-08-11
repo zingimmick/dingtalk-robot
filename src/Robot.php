@@ -15,7 +15,7 @@ class Robot
     /**
      * @var string
      */
-    public const BASE_URI = 'https://oapi.dingtalk.com' ;
+    public const BASE_URI = 'https://oapi.dingtalk.com';
 
     /**
      * @var string Access token of robot webhook
