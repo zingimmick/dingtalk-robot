@@ -17,29 +17,16 @@ class Robot
      */
     public const BASE_URI = 'https://oapi.dingtalk.com';
 
-    /**
-     * @var string Access token of robot webhook
-     */
-    private $accessToken;
-
-    /**
-     * @var string|null 密钥，机器人安全设置页面，加签一栏下面显示的SEC开头的字符串
-     */
-    private $secret;
-
-    /**
-     * @var \GuzzleHttp\Client
-     */
-    private $client;
+    private \GuzzleHttp\Client $client;
 
     /**
      * @param string $accessToken Access token of robot webhook
      * @param string|null $secret 密钥，机器人安全设置页面，加签一栏下面显示的SEC开头的字符串
      */
-    public function __construct(string $accessToken, ?string $secret)
-    {
-        $this->accessToken = $accessToken;
-        $this->secret = $secret;
+    public function __construct(
+        private string $accessToken,
+        private ?string $secret
+    ) {
         $this->client = new Client(
             [
                 'base_uri' => self::BASE_URI,
@@ -80,7 +67,7 @@ class Robot
         ]);
 
         /** @var array{errcode: int, errmsg: string} $data */
-        $data = json_decode($response->getBody()->getContents(), true);
+        $data = json_decode($response->getBody()->getContents(), true, 512, JSON_THROW_ON_ERROR);
         if ($data['errcode'] !== 0) {
             throw new CannotSendException($data['errmsg'], $data['errcode']);
         }
@@ -94,7 +81,7 @@ class Robot
      *
      * @return string 签名
      */
-    public static function sign($timestamp, string $secret): string
+    public static function sign(string|int $timestamp, string $secret): string
     {
         $data = $timestamp . "\n" . $secret;
 

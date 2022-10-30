@@ -7,16 +7,10 @@ namespace Zing\DingtalkRobot\Messages;
 class FeedCardMessage implements Message
 {
     /**
-     * @var array<\Zing\DingtalkRobot\Messages\Link>
-     */
-    private $links = [];
-
-    /**
      * @param array<\Zing\DingtalkRobot\Messages\Link> $links
      */
-    public function __construct(array $links)
+    public function __construct(private array $links)
     {
-        $this->links = $links;
     }
 
     public function type(): string
@@ -32,9 +26,7 @@ class FeedCardMessage implements Message
         return [
             'msgtype' => $this->type(),
             'feedCard' => [
-                'links' => array_map(static function (Link $link): array {
-                    return $link->toArray();
-                }, $this->links),
+                'links' => array_map(static fn (Link $link): array => $link->toArray(), $this->links),
             ],
         ];
     }

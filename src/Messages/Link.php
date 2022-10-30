@@ -8,26 +8,11 @@ use Zing\DingtalkRobot\Contracts\Arrayable;
 
 class Link implements Arrayable
 {
-    /**
-     * @var string
-     */
-    private $title;
-
-    /**
-     * @var string
-     */
-    private $messageURL;
-
-    /**
-     * @var string
-     */
-    private $picURL;
-
-    public function __construct(string $title, string $messageURL, string $picURL)
-    {
-        $this->title = $title;
-        $this->messageURL = $messageURL;
-        $this->picURL = $picURL;
+    public function __construct(
+        private string $title,
+        private string $messageURL,
+        private string $picURL
+    ) {
     }
 
     /**

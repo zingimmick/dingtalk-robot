@@ -9,7 +9,7 @@
 <a href="https://codeclimate.com/github/zingimmick/dingtalk-robot/maintainability"><img src="https://api.codeclimate.com/v1/badges/1e97924fa1f2241f5a77/maintainability" alt="Code Climate" /></a>
 </p>
 
-> **Requires [PHP 7.2.0+](https://php.net/releases/)**
+> **Requires [PHP 8.0+](https://php.net/releases/)**
 
 Require Dingtalk Robot using [Composer](https://getcomposer.org):
 

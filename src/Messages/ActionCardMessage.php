@@ -6,42 +6,19 @@ namespace Zing\DingtalkRobot\Messages;
 
 class ActionCardMessage implements Message
 {
-    /**
-     * @var string
-     */
-    private $title;
-
-    /**
-     * @var string
-     */
-    private $text;
-
-    /**
-     * @var int
-     */
-    private $hideAvatar = 0;
-
-    /**
-     * @var int
-     */
-    private $btnOrientation;
-
-    /**
-     * @var array<\Zing\DingtalkRobot\Messages\Button>
-     */
-    private $btns = [];
+    private int $hideAvatar = 0;
 
     /**
      * ActionCardMessage constructor.
      *
      * @param array<\Zing\DingtalkRobot\Messages\Button> $btns
      */
-    public function __construct(string $title, string $text, array $btns = [], int $btnOrientation = 0)
-    {
-        $this->title = $title;
-        $this->text = $text;
-        $this->btnOrientation = $btnOrientation;
-        $this->btns = $btns;
+    public function __construct(
+        private string $title,
+        private string $text,
+        private array $btns = [],
+        private int $btnOrientation = 0
+    ) {
     }
 
     public function hideAvatar(bool $hide = true): self
@@ -75,9 +52,7 @@ class ActionCardMessage implements Message
                 'text' => $this->text,
                 'btnOrientation' => $this->btnOrientation,
                 'hideAvatar' => $this->hideAvatar,
-                'btns' => array_map(static function (Button $button): array {
-                    return $button->toArray();
-                }, $this->btns),
+                'btns' => array_map(static fn (Button $button): array => $button->toArray(), $this->btns),
             ],
         ];
     }

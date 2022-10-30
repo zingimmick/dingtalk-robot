@@ -16,8 +16,9 @@ trait InteractsWithAt
      *
      * @return $this
      */
-    public function at($mobiles): self
+    public function at(array|string|int $mobiles): self
     {
+        /** @var array<string|int> $mobiles */
         $mobiles = \is_array($mobiles) ? $mobiles : \func_get_args();
 
         $this->at['atMobiles'] = $mobiles;

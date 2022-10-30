@@ -8,20 +8,10 @@ use Zing\DingtalkRobot\Contracts\Arrayable;
 
 class Button implements Arrayable
 {
-    /**
-     * @var string
-     */
-    private $title;
-
-    /**
-     * @var string
-     */
-    private $actionURL;
-
-    public function __construct(string $title, string $actionURL)
-    {
-        $this->title = $title;
-        $this->actionURL = $actionURL;
+    public function __construct(
+        private string $title,
+        private string $actionURL
+    ) {
     }
 
     /**

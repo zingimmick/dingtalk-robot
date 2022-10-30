@@ -8,20 +8,10 @@ class MarkdownMessage implements Message
 {
     use InteractsWithAt;
 
-    /**
-     * @var string
-     */
-    private $title;
-
-    /**
-     * @var string
-     */
-    private $text;
-
-    public function __construct(string $title, string $text)
-    {
-        $this->title = $title;
-        $this->text = $text;
+    public function __construct(
+        private string $title,
+        private string $text
+    ) {
     }
 
     public function type(): string
@@ -30,7 +20,7 @@ class MarkdownMessage implements Message
     }
 
     /**
-     * @return array{msgtype: string, markdown: array{title: string, text: string}, at: array{atMobiles?: int[]|string[], isAtAll?: bool}}
+     * @return array{msgtype: string, markdown: array{title: string, text: string}, at: array{atMobiles?: array<string|int>, isAtAll?: bool}}
      */
     public function toArray(): array
     {
@@ -51,7 +41,7 @@ class MarkdownMessage implements Message
         }
 
         foreach ($this->at['atMobiles'] as $mobile) {
-            if (strpos($this->text, sprintf('@%s', $mobile)) === false) {
+            if (! str_contains($this->text, sprintf('@%s', $mobile))) {
                 $this->text .= sprintf('@%s', $mobile);
             }
         }
