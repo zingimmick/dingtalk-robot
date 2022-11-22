@@ -9,7 +9,6 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Response;
-use ReflectionObject;
 use Zing\DingtalkRobot\Robot;
 
 trait MockRobot
@@ -45,7 +44,7 @@ trait MockRobot
             ]
         );
 
-        $reflectionObject = new ReflectionObject($robot);
+        $reflectionObject = new \ReflectionObject($robot);
         $reflectionProperty = $reflectionObject->getProperty('client');
         $reflectionProperty->setAccessible(true);
         $reflectionProperty->setValue($robot, $client);

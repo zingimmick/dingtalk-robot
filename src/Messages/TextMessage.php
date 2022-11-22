@@ -8,8 +8,9 @@ class TextMessage implements Message
 {
     use InteractsWithAt;
 
-    public function __construct(private string $message)
-    {
+    public function __construct(
+        private string $message
+    ) {
     }
 
     public function type(): string

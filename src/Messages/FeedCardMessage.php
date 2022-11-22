@@ -9,8 +9,9 @@ class FeedCardMessage implements Message
     /**
      * @param array<\Zing\DingtalkRobot\Messages\Link> $links
      */
-    public function __construct(private array $links)
-    {
+    public function __construct(
+        private array $links
+    ) {
     }
 
     public function type(): string
