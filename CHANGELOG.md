@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.0.0 - 2022-12-12
+
+<!-- Release notes generated using configuration in .github/release.yml at 2.x -->
+### What's Changed
+
+#### Other Changes
+
+- Configuring automatically generated release notes by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/78
+- Add support for new ECSConfig and RectorConfig class by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/79
+- Calling a reusable workflow for update-changelog by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/80
+- Changes Closure to be static when possible by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/87
+- Simplify lint action by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/88
+- Fix coding style by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/89
+- Support for PHP 8.2 by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/92
+- Bump minimum version of phpstan/phpstan to 1.5.6 by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/98
+
+**Full Changelog**: https://github.com/zingimmick/dingtalk-robot/compare/1.4.0...2.0.0
+
 ## 1.4.0 - 2022-02-21
 
 ## What's Changed
