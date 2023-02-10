@@ -31,7 +31,7 @@ final class RobotTest extends TestCase
     /**
      * @return array<array<\Closure>>
      */
-    public function messages(): array
+    public static function messages(): array
     {
         $generators = [
             static fn (): string => '我就是我, 是不一样的烟火',
