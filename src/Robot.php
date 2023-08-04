@@ -81,7 +81,7 @@ class Robot
      *
      * @return string 签名
      */
-    public static function sign(string|int $timestamp, string $secret): string
+    public static function sign(int|string $timestamp, string $secret): string
     {
         $data = $timestamp . "\n" . $secret;
 
