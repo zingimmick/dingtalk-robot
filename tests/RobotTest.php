@@ -31,7 +31,7 @@ final class RobotTest extends TestCase
     /**
      * @return array<array<\Closure>>
      */
-    public static function messages(): array
+    public static function provideSendCases(): iterable
     {
         $generators = [
             static fn (): string => '我就是我, 是不一样的烟火',
@@ -88,9 +88,9 @@ final class RobotTest extends TestCase
     }
 
     /**
-     * @dataProvider messages
+     * @dataProvider provideSendCases
      */
-    public function testSend(\Zing\DingtalkRobot\Messages\Message|string|callable $messageGenerator): void
+    public function testSend(callable|string|\Zing\DingtalkRobot\Messages\Message $messageGenerator): void
     {
         $robot = $this->makeRobot();
         $message = \is_callable($messageGenerator) ? $messageGenerator() : $messageGenerator;
