@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Rector\Config\RectorConfig;
 use Rector\PHPUnit\CodeQuality\Rector\Class_\AddSeeTestAnnotationRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
-use Rector\Privatization\Rector\Class_\ChangeReadOnlyVariableWithDefaultValueToConstantRector;
 use Rector\Privatization\Rector\Class_\FinalizeClassesWithoutChildrenRector;
 use Rector\Set\ValueObject\LevelSetList;
 use Zing\CodingStandard\Set\RectorSetList;
@@ -17,7 +16,6 @@ return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->skip(
         [
             AddSeeTestAnnotationRector::class,
-            ChangeReadOnlyVariableWithDefaultValueToConstantRector::class,
             FinalizeClassesWithoutChildrenRector::class,
         ]
     );
