@@ -95,16 +95,16 @@ final class RobotTest extends TestCase
         $robot = $this->makeRobot();
         $message = \is_callable($messageGenerator) ? $messageGenerator() : $messageGenerator;
         $robot->send($message);
-        self::assertCount(1, $this->container);
+        $this->assertCount(1, $this->container);
         $response = $this->container[0]['response'];
-        self::assertInstanceOf(Response::class, $response);
+        $this->assertInstanceOf(Response::class, $response);
         if (\function_exists('\GuzzleHttp\Psr7\rewind_body')) {
             rewind_body($response);
         } else {
             Message::rewindBody($response);
         }
 
-        self::assertSame(ResponseContentList::SUCCESS, $response->getBody()->getContents());
+        $this->assertSame(ResponseContentList::SUCCESS, $response->getBody()->getContents());
     }
 
     public function testSendInvalidMessage(): void
@@ -123,14 +123,14 @@ final class RobotTest extends TestCase
 
     public function testSign(): void
     {
-        self::assertSame('amkLsBkk5EosJmCHy4jULhWijmFkrFuDirC8ZpzHWpY=', Robot::sign(1_614_076_018_000, 'test'));
+        $this->assertSame('amkLsBkk5EosJmCHy4jULhWijmFkrFuDirC8ZpzHWpY=', Robot::sign(1_614_076_018_000, 'test'));
     }
 
     public function testEmptyMessage(): void
     {
         $emptyMessage = new EmptyMessage();
-        self::assertSame('empty', $emptyMessage->type());
-        self::assertSame([
+        $this->assertSame('empty', $emptyMessage->type());
+        $this->assertSame([
             'msgtype' => 'empty',
         ], $emptyMessage->toArray());
     }
