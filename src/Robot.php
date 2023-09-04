@@ -52,7 +52,7 @@ class Robot
         $query = [
             'access_token' => $this->accessToken,
         ];
-        if ($this->secret) {
+        if ($this->secret ) {
             $timestamp = time() * 1000;
 
             $sign = self::sign($timestamp, $this->secret);
