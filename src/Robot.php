@@ -17,7 +17,7 @@ class Robot
      */
     public const BASE_URI = 'https://oapi.dingtalk.com';
 
-    private \GuzzleHttp\Client $client;
+    private Client $client;
 
     /**
      * @param string $accessToken Access token of robot webhook
