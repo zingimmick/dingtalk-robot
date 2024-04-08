@@ -1,7 +1,7 @@
 # Dingtalk Robot
 <p align="center">
-<a href="https://github.com/zingimmick/dingtalk-robot/actions"><img src="https://github.com/zingimmick/dingtalk-robot/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://codecov.io/gh/zingimmick/dingtalk-robot"><img src="https://codecov.io/gh/zingimmick/dingtalk-robot/branch/master/graph/badge.svg" alt="Code Coverage" /></a>
+<a href="https://github.com/zingimmick/dingtalk-robot/actions"><img src="https://github.com/zingimmick/dingtalk-robot/actions/workflows/tests.yml/badge.svg?branch=2.x" alt="Build Status"></a>
+<a href="https://codecov.io/gh/zingimmick/dingtalk-robot"><img src="https://codecov.io/gh/zingimmick/laravel-sms/branch/2.x/graph/badge.svg" alt="Code Coverage" /></a>
 <a href="https://packagist.org/packages/zing/dingtalk-robot"><img src="https://poser.pugx.org/zing/dingtalk-robot/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/zing/dingtalk-robot"><img src="https://poser.pugx.org/zing/dingtalk-robot/downloads" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/zing/dingtalk-robot"><img src="https://poser.pugx.org/zing/dingtalk-robot/v/unstable.svg" alt="Latest Unstable Version"></a>
