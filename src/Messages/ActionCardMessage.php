@@ -9,8 +9,6 @@ class ActionCardMessage implements Message
     private int $hideAvatar = 0;
 
     /**
-     * ActionCardMessage constructor.
-     *
      * @param array<\Zing\DingtalkRobot\Messages\Button> $btns
      */
     public function __construct(
