@@ -41,8 +41,8 @@ class MarkdownMessage implements Message
         }
 
         foreach ($this->at['atMobiles'] as $mobile) {
-            if (! str_contains($this->text, sprintf('@%s', $mobile))) {
-                $this->text .= sprintf('@%s', $mobile);
+            if (! str_contains($this->text, \sprintf('@%s', $mobile))) {
+                $this->text .= \sprintf('@%s', $mobile);
             }
         }
 
