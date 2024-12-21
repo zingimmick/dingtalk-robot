@@ -5,3 +5,4 @@ parameters:
         - tests
     ignoreErrors:
         - '#GuzzleHttp\\Psr7\\rewind_body not found#'
+        - '#Property Zing\\DingtalkRobot\\Tests\\RobotTest::\$container (array<array{response: Psr\\Http\\Message\\MessageInterface}>) does not accept array|ArrayAccess<int, array>.#'
