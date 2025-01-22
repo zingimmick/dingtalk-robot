@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.0.1 - 2025-01-22
+
+<!-- Release notes generated using configuration in .github/release.yml at 2.x -->
+### What's Changed
+
+#### Other Changes
+
+* Use latest PHP version for test by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/100
+* Update license copyright year(s) by @github-actions in https://github.com/zingimmick/dingtalk-robot/pull/101
+* Rename skipped rules on $rectorConfig->skip() are changed to different namespace by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/112
+* Support for PHP 8.3 by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/116
+* Update license copyright year(s) by @github-actions in https://github.com/zingimmick/dingtalk-robot/pull/120
+* Fix badge svg by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/127
+* Remove rules that were never registered by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/135
+* Support for PHP 8.4 by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/137
+* Update license copyright year(s) by @github-actions in https://github.com/zingimmick/dingtalk-robot/pull/141
+
+**Full Changelog**: https://github.com/zingimmick/dingtalk-robot/compare/2.0.0...2.0.1
+
 ## 2.0.0 - 2022-12-12
 
 <!-- Release notes generated using configuration in .github/release.yml at 2.x -->
