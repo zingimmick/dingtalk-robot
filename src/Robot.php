@@ -12,9 +12,6 @@ use Zing\DingtalkRobot\Messages\TextMessage;
 
 class Robot
 {
-    /**
-     * @var string
-     */
     public const BASE_URI = 'https://oapi.dingtalk.com';
 
     private Client $client;
