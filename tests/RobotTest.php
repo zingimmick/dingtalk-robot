@@ -6,6 +6,8 @@ namespace Zing\DingtalkRobot\Tests;
 
 use GuzzleHttp\Psr7\Message;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Zing\DingtalkRobot\Exceptions\CannotSendException;
 use Zing\DingtalkRobot\Exceptions\InvalidArgumentException;
 use Zing\DingtalkRobot\Messages\ActionCardMessage;
@@ -31,6 +33,7 @@ final class RobotTest extends TestCase
     /**
      * @dataProvider provideSendCases
      */
+    #[DataProvider('provideSendCases')]
     public function testSend(callable|string|\Zing\DingtalkRobot\Messages\Message $messageGenerator): void
     {
         $robot = $this->makeRobot();
