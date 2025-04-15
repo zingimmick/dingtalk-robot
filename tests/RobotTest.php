@@ -6,6 +6,7 @@ namespace Zing\DingtalkRobot\Tests;
 
 use GuzzleHttp\Psr7\Message;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Zing\DingtalkRobot\Exceptions\CannotSendException;
 use Zing\DingtalkRobot\Exceptions\InvalidArgumentException;
 use Zing\DingtalkRobot\Messages\ActionCardMessage;
@@ -27,6 +28,27 @@ use function GuzzleHttp\Psr7\rewind_body;
 final class RobotTest extends TestCase
 {
     use MockRobot;
+
+    /**
+     * @dataProvider provideSendCases
+     */
+    #[DataProvider('provideSendCases')]
+    public function testSend(callable|string|\Zing\DingtalkRobot\Messages\Message $messageGenerator): void
+    {
+        $robot = $this->makeRobot();
+        $message = \is_callable($messageGenerator) ? $messageGenerator() : $messageGenerator;
+        $robot->send($message);
+        $this->assertCount(1, $this->container);
+        $response = $this->container[0]['response'];
+        $this->assertInstanceOf(Response::class, $response);
+        if (\function_exists('\GuzzleHttp\Psr7\rewind_body')) {
+            rewind_body($response);
+        } else {
+            Message::rewindBody($response);
+        }
+
+        $this->assertSame(ResponseContentList::SUCCESS, $response->getBody()->getContents());
+    }
 
     /**
      * @return array<array<\Closure>>
@@ -85,26 +107,6 @@ final class RobotTest extends TestCase
         ];
 
         return array_map(static fn ($generator): array => [$generator], $generators);
-    }
-
-    /**
-     * @dataProvider provideSendCases
-     */
-    public function testSend(callable|string|\Zing\DingtalkRobot\Messages\Message $messageGenerator): void
-    {
-        $robot = $this->makeRobot();
-        $message = \is_callable($messageGenerator) ? $messageGenerator() : $messageGenerator;
-        $robot->send($message);
-        $this->assertCount(1, $this->container);
-        $response = $this->container[0]['response'];
-        $this->assertInstanceOf(Response::class, $response);
-        if (\function_exists('\GuzzleHttp\Psr7\rewind_body')) {
-            rewind_body($response);
-        } else {
-            Message::rewindBody($response);
-        }
-
-        $this->assertSame(ResponseContentList::SUCCESS, $response->getBody()->getContents());
     }
 
     public function testSendInvalidMessage(): void
