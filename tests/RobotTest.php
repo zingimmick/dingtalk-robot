@@ -7,7 +7,6 @@ namespace Zing\DingtalkRobot\Tests;
 use GuzzleHttp\Psr7\Message;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\DataProviderExternal;
 use Zing\DingtalkRobot\Exceptions\CannotSendException;
 use Zing\DingtalkRobot\Exceptions\InvalidArgumentException;
 use Zing\DingtalkRobot\Messages\ActionCardMessage;
