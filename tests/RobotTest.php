@@ -106,7 +106,7 @@ final class RobotTest extends TestCase
             ),
         ];
 
-        return array_map(static fn ($generator): array => [$generator], $generators);
+        return array_map(static fn (\Closure $generator): array => [$generator], $generators);
     }
 
     public function testSendInvalidMessage(): void
