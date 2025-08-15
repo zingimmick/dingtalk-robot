@@ -27,7 +27,7 @@ use function GuzzleHttp\Psr7\rewind_body;
  */
 final class RobotTest extends TestCase
 {
-    use MockRobot;
+    use MockRobot; 
 
     /**
      * @dataProvider provideSendCases
