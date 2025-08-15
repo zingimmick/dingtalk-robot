@@ -27,7 +27,7 @@ use function GuzzleHttp\Psr7\rewind_body;
  */
 final class RobotTest extends TestCase
 {
-    use MockRobot; 
+    use MockRobot;
 
     /**
      * @dataProvider provideSendCases
@@ -106,7 +106,7 @@ final class RobotTest extends TestCase
             ),
         ];
 
-        return array_map(static fn ($generator): array => [$generator], $generators);
+        return array_map(static fn (\Closure $generator): array => [$generator], $generators);
     }
 
     public function testSendInvalidMessage(): void
