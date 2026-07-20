@@ -25,7 +25,7 @@
     "require": {
         "php": "^8.0",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^6.3 || ^7.2"
+        "guzzlehttp/guzzle": "^6.3 || ^7.2 || ^8.0"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.5.6 || ^2.0.0",
