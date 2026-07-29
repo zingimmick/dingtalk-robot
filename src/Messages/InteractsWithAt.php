@@ -26,8 +26,6 @@ trait InteractsWithAt
 
     /**
      * 是否@所有人。
-     *
-     * @return $this
      */
     public function atAll(bool $atAll = true): self
     {
