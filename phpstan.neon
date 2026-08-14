@@ -6,5 +6,5 @@ parameters:
     ignoreErrors:
         - '#GuzzleHttp\\Psr7\\rewind_body not found#'
         - '#Property Zing\\DingtalkRobot\\Tests\\RobotTest::\$container .* does not accept array.*#'
-        - '#Parameter #1 \$container of static method GuzzleHttp\\Middleware::history\(\).*#'
+        - '#Parameter \#1 \$container of static method GuzzleHttp\\Middleware::history\(\).*#'
         - '#Method Zing\\DingtalkRobot\\Tests\\RobotTest::createHandler\(\) return type with generic class GuzzleHttp\\HandlerStack does not specify its types#'
