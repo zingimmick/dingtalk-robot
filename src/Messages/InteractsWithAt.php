@@ -13,8 +13,6 @@ trait InteractsWithAt
 
     /**
      * @param array<string|int>|string|int $mobiles 被@人的手机号
-     *
-     * @return $this
      */
     public function at(array|int|string $mobiles): self
     {
@@ -28,8 +26,6 @@ trait InteractsWithAt
 
     /**
      * 是否@所有人。
-     *
-     * @return $this
      */
     public function atAll(bool $atAll = true): self
     {
