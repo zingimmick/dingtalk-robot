@@ -5,4 +5,6 @@ parameters:
         - tests
     ignoreErrors:
         - '#GuzzleHttp\\Psr7\\rewind_body not found#'
-        - '#Property Zing\\DingtalkRobot\\Tests\\RobotTest::\$container (array<array{response: Psr\\Http\\Message\\MessageInterface}>) does not accept array|ArrayAccess<int, array>.#'
+        - '#Property Zing\\DingtalkRobot\\Tests\\RobotTest::\$container .* does not accept array.*#'
+        - '#Parameter #1 \$container of static method GuzzleHttp\\Middleware::history\(\).*#'
+        - '#Method Zing\\DingtalkRobot\\Tests\\RobotTest::createHandler\(\) return type with generic class GuzzleHttp\\HandlerStack does not specify its types#'
