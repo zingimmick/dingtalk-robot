@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.1.0 - 2026-11-27
+
+<!-- Release notes generated using configuration in .github/release.yml at 2.x -->
+### What's Changed
+
+#### Other Changes
+
+* Support for PHPUnit 12 by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/142
+* Support for PHP 8.5 by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/152
+* Update license copyright year(s) by @github-actions[bot] in https://github.com/zingimmick/dingtalk-robot/pull/155
+* Support for PHPUnit 13 by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/158
+* Update guzzlehttp/guzzle requirement from ^6.3 || ^7.2 to ^6.3 || ^7.2 || ^8.0 by @dependabot[bot] in https://github.com/zingimmick/dingtalk-robot/pull/164
+* Support for PHP 8.6 by @zingimmick in https://github.com/zingimmick/dingtalk-robot/pull/166
+
+**Full Changelog**: https://github.com/zingimmick/dingtalk-robot/compare/2.0.1...2.1.0
+
 ## 2.0.1 - 2025-01-22
 
 <!-- Release notes generated using configuration in .github/release.yml at 2.x -->
